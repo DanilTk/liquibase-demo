@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-member
+      author: Dan Tkachenko
+      context: 'prod'
+      changes:
+        - sqlFile:
+            path: liquibase/data/member.sql

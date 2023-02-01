@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:14.4-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: atom_demo
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'

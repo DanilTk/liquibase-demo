@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/ddl/001-create-table-company.yaml
+  - include:
+      file: liquibase/ddl/002-create-table-company_member.yaml
+  - include:
+      file: liquibase/ddl/003-insert-data-company.yaml
+#  - include:
+#      file: liquibase/data/company_member.sql
+#  - include:
+#      file: liquibase/ddl/005-add-column-company.yaml

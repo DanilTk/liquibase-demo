@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-company_member
+      author: Dan Tkachenko
+      changes:
+        - createTable:
+            remarks: "Some description."
+            tableName: company_member
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: version
+                  type: integer
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp with time zone
+                  defaultValueComputed: current_datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp with time zone
+                  defaultValueComputed: current_datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: company_uuid
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: company_member_company_uuid_fk
+                    referencedColumnNames: uuid
+                    referencedTableName: company
+              - column:
+                  name: is_verified
+                  type: boolean
+                  constraints:
+                    nullable: false

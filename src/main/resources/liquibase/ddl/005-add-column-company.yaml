@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-column-company
+      author: Dan Tkachenko
+      changes:
+        - addColumn:
+            remarks: "Some description."
+            tableName: company
+            columns:
+              - column:
+                  name: picture_file_uuid
+                  type: uuid

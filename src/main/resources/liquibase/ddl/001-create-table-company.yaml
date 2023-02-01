@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-company
+      author: Dan Tkachenko
+      changes:
+        - createTable:
+            remarks: "Some description."
+            tableName: company
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: version
+                  type: integer
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp with time zone
+                  defaultValueComputed: current_datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp with time zone
+                  defaultValueComputed: current_datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tax_number
+                  type: varchar(12)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company_type
+                  type: varchar(35)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company_status
+                  type: varchar(15)
+                  constraints:
+                    nullable: false

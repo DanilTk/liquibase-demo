@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/atom_demo
+    username: root
+    password: pass
+  liquibase:
+    change-log: classpath:changelog-master.yaml
+  profiles:
+    active: local
+
+server:
+  port: 8081
