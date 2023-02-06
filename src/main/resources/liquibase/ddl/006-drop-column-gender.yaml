@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop-column-gender
+      author: Dan Tkachenko
+      changes:
+        - dropColumn:
+            remarks: "Drop column."
+            tableName: company_member
+            columns:
+              - column:
+                  name: gender

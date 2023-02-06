@@ -2,7 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: insert-data-company
       author: Dan Tkachenko
-      contextFilter: prod
+      context: local
       changes:
         - sqlFile:
             path: liquibase/data/company.sql

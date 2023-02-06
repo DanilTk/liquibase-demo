@@ -2,7 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: insert-data-member
       author: Dan Tkachenko
-      context: 'prod'
+      context: local
       changes:
         - sqlFile:
             path: liquibase/data/member.sql
